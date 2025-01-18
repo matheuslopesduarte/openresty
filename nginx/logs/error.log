@@ -1,1 +1,74 @@
 2025/01/18 03:49:19 [error] 16992#16992: *9 open() "/usr/local/openresty/nginx/html/aaaaa" failed (2: No such file or directory), client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaaa HTTP/1.1", host: "mlopes.xyz"
+2025/01/18 04:04:08 [crit] 264#264: *2 connect() to unix:/run/php/php8.4-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.4-fpm.sock:", host: "mlopes.xyz"
+2025/01/18 04:04:09 [crit] 264#264: *2 connect() to unix:/run/php/php8.4-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/run/php/php8.4-fpm.sock:", host: "mlopes.xyz", referrer: "https://mlopes.xyz/"
+2025/01/18 04:07:32 [error] 252#252: *103 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=68da0cc8e7c699e75c434123b12e79275f7864ce473adc39704952d75b1a4255 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sat, 18 Jan 2025 07:07:31 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8Zh0yKLttaDd75mszRlfnqJKQmLvwt2RpETg-2-8cCFRg
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/18 04:07:32 [error] 252#252: *103 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/18 04:07:32 [error] 252#252: *103 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/18 04:07:42 [error] 252#252: *119 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=68da0cc8e7c699e75c434123b12e79275f7864ce473adc39704952d75b1a4255 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sat, 18 Jan 2025 07:07:41 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZBGbvCnTw2m3HHwz5hYh3L-MFrl932xPeHFVd00MigQA
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/18 04:07:42 [error] 252#252: *119 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/18 04:07:42 [error] 252#252: *119 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/18 04:08:45 [error] 3327#3327: *5 rewrite or internal redirection cycle while internally redirecting to "/aaaaaaaaaaaaaaa///////////", client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaaaaaaaaaaaaa HTTP/1.1", host: "mlopes.xyz"
+2025/01/18 04:08:45 [error] 3327#3327: *2 rewrite or internal redirection cycle while internally redirecting to "/favicon.ico///////////", client: 172.27.80.1, server: mlopes.xyz, request: "GET /favicon.ico HTTP/1.1", host: "mlopes.xyz", referrer: "https://mlopes.xyz/aaaaaaaaaaaaaaa"
+2025/01/18 04:10:45 [error] 3931#3931: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaa HTTP/1.1", upstream: "http://127.0.0.1:8000/aaa", host: "mlopes.xyz"
+2025/01/18 04:10:51 [error] 3931#3931: *14 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaa HTTP/1.1", upstream: "http://127.0.0.1:8000/aaaa", host: "mlopes.xyz"
+2025/01/18 04:11:08 [error] 3931#3931: *14 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaa HTTP/1.1", upstream: "http://127.0.0.1:8000/aaa", host: "mlopes.xyz"
+2025/01/18 04:11:10 [error] 3931#3931: *14 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaa HTTP/1.1", upstream: "http://127.0.0.1:8000/aaaa", host: "mlopes.xyz"
+2025/01/18 04:11:13 [error] 3931#3931: *14 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaaa HTTP/1.1", upstream: "http://127.0.0.1:8000/aaaaa", host: "mlopes.xyz"
+2025/01/18 04:11:16 [error] 3931#3931: *14 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaaaaaaaaaa HTTP/1.1", upstream: "http://127.0.0.1:8000/aaaaaaaaaaaa", host: "mlopes.xyz"
+2025/01/18 04:11:19 [error] 3931#3931: *14 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaaaaaaaaaa/ HTTP/1.1", upstream: "http://127.0.0.1:8000/aaaaaaaaaaaa/", host: "mlopes.xyz"
+2025/01/18 04:11:22 [error] 3931#3931: *14 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaaaaaaaaaa/rc HTTP/1.1", upstream: "http://127.0.0.1:8000/aaaaaaaaaaaa/rc", host: "mlopes.xyz"
+2025/01/18 04:11:37 [error] 3931#3931: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaaaaaaaaaa/rc HTTP/1.1", upstream: "http://127.0.0.1:8000/aaaaaaaaaaaa/rc", host: "mlopes.xyz"
+2025/01/18 04:11:43 [error] 4157#4157: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaa/ HTTP/1.1", upstream: "http://127.0.0.1:8000/aaa/", host: "mlopes.xyz"
+2025/01/18 04:11:47 [error] 4157#4157: *16 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaa/ HTTP/1.1", upstream: "http://127.0.0.1:8000/aaa/", host: "mlopes.xyz", referrer: "https://www.google.com/"
