@@ -1,0 +1,6 @@
+/bin
+/luajit
+/lualib
+/zlib
+/openssl3
+/pcre2
