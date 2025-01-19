@@ -72,3 +72,2115 @@ replay-nonce: Ynw3DK8ZBGbvCnTw2m3HHwz5hYh3L-MFrl932xPeHFVd00MigQA
 2025/01/18 04:11:37 [error] 3931#3931: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaaaaaaaaaaa/rc HTTP/1.1", upstream: "http://127.0.0.1:8000/aaaaaaaaaaaa/rc", host: "mlopes.xyz"
 2025/01/18 04:11:43 [error] 4157#4157: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaa/ HTTP/1.1", upstream: "http://127.0.0.1:8000/aaa/", host: "mlopes.xyz"
 2025/01/18 04:11:47 [error] 4157#4157: *16 connect() failed (111: Connection refused) while connecting to upstream, client: 172.27.80.1, server: mlopes.xyz, request: "GET /aaa/ HTTP/1.1", upstream: "http://127.0.0.1:8000/aaa/", host: "mlopes.xyz", referrer: "https://www.google.com/"
+2025/01/19 00:57:52 [error] 4295#4295: *105 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 03:57:52 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuuQ72HBGmkcz4dryN6jSXX84glrRhOmMfLsHTdRLdNk0M
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 00:57:52 [error] 4295#4295: *105 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 00:57:52 [error] 4295#4295: *105 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 00:58:00 [error] 4295#4295: *116 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 03:58:00 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1Kvnks5dR_U3Ysba617yyWYQX2dtU_GcnR1Oc2o2vNSk
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 00:58:00 [error] 4295#4295: *116 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 00:58:00 [error] 4295#4295: *116 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 02:01:51 [error] 4295#4295: *262 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 05:01:51 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8Ziy0vAOzTVytTcVas01qhWPwcUx40msYx74jacThwUMQ
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 02:01:51 [error] 4295#4295: *262 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 02:01:51 [error] 4295#4295: *262 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 02:01:56 [error] 4295#4295: *279 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 05:01:57 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZueOsfgbrFBobzz8iTM-YwMrnAIldcZPvdq_MI1RRbqQ
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 02:01:56 [error] 4295#4295: *279 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 02:01:56 [error] 4295#4295: *279 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 03:54:02 [error] 4295#4295: *501 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 06:54:02 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1vtZfOS7IGJcul89kPpOiFPsqzpz890ThX6eJPfbCc7I
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 03:54:02 [error] 4295#4295: *501 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 03:54:02 [error] 4295#4295: *501 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:09:45 [error] 4295#4295: *537 [lua] ssl_certificate.lua:53: issue_cert_unlock(): auto-ssl: failed to unlock: lock does not match expected value, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:09:50 [error] 4295#4295: *545 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain www.aaaaaaaaaaaaaaaaaaa.mlopes.xyz --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing www.aaaaaaaaaaaaaaaaaaa.mlopes.xyz
+ + Checking domain name(s) of existing cert... unchanged.
+ + Signing domains...
+ + Generating private key...
+ err: /usr/local/bin/resty-auto-ssl/dehydrated: line 991: /etc/resty-auto-ssl/letsencrypt/certs/www.aaaaaaaaaaaaaaaaaaa.mlopes.xyz/privkey-1737270585.pem: No such file or directory
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:09:50 [error] 4295#4295: *545 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:09:50 [error] 4295#4295: *545 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for www.aaaaaaaaaaaaaaaaaaa.mlopes.xyz - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:11:02 [error] 4295#4295: *576 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 07:11:03 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1OwqDXYXMG-v_d5n-9cKccZgoKJBbTvvsJIcRWrDQZOA
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:11:02 [error] 4295#4295: *576 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:11:02 [error] 4295#4295: *576 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:11:08 [error] 4295#4295: *595 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 07:11:08 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuubD_VjUVLcq-GsNL7F96SumcNUZ22aNOdC18CTCykYww
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:11:08 [error] 4295#4295: *595 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:11:08 [error] 4295#4295: *595 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:27 [error] 4295#4295: *865 [lua] ssl_certificate.lua:53: issue_cert_unlock(): auto-ssl: failed to unlock: lock does not match expected value, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:29 [error] 4295#4295: *869 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain sitemaps.mlopes.xyz --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing sitemaps.mlopes.xyz
+ + Signing domains...
+ + Generating private key...
+ err: /usr/local/bin/resty-auto-ssl/dehydrated: line 991: /etc/resty-auto-ssl/letsencrypt/certs/sitemaps.mlopes.xyz/privkey-1737273207.pem: No such file or directory
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:29 [error] 4295#4295: *869 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:29 [error] 4295#4295: *869 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for sitemaps.mlopes.xyz - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:46 [error] 4295#4295: *893 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 07:53:46 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3Ouugms1jkHlBa-D_1-BzBw13SyvZ7RYJRgIffSP12xhkAk
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:46 [error] 4295#4295: *893 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:46 [error] 4295#4295: *893 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:51 [error] 4295#4295: *911 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 07:53:51 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDxJOjzXrbjB9svSimfHx-D_bc-AqOZP8r7h_9B6qKPRo
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:51 [error] 4295#4295: *911 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 04:53:51 [error] 4295#4295: *911 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:02:32 [error] 4295#4295: *1241 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain blog.mlopes.xyz --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing blog.mlopes.xyz
+ + Creating new directory /etc/resty-auto-ssl/letsencrypt/certs/blog.mlopes.xyz ...
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ + Received 1 authorizations URLs from the CA
+ + Handling authorization for blog.mlopes.xyz
+ + 1 pending challenge(s)
+ + Deploying challenge tokens...
+deploy_challenge
+ + Responding to challenge for blog.mlopes.xyz authorization...
+ + Challenge is valid!
+ + Cleaning challenge tokens...
+clean_challenge
+ + Requesting certificate...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/finalize/2176686025/345880251255 (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 09:02:32 GMT
+content-type: application/problem+json
+content-length: 177
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3Ouu33MjrYU0DwzK3MfG-mKO4_ufJdHrBxm_M_RJ4ozn-bE
+
+{
+  "type": "urn:ietf:params:acme:error:badNonce",
+  "detail": "JWS has an invalid anti-replay nonce: \"Ynw3DK8ZQNHGxzgIDEyljqQ8izuFU3fWyDyp7RBPxeBT1I4y6xQ\"",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:02:32 [error] 4295#4295: *1241 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:02:32 [error] 4295#4295: *1241 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for blog.mlopes.xyz - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:03:12 [error] 4295#4295: *1253 [lua] ssl_certificate.lua:53: issue_cert_unlock(): auto-ssl: failed to unlock: lock does not match expected value, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:03:17 [error] 4295#4295: *1262 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain www.mlopes.xyz --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 512 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing www.mlopes.xyz
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ + Received 1 authorizations URLs from the CA
+ + Handling authorization for www.mlopes.xyz
+ + Found valid authorization for www.mlopes.xyz
+ + 0 pending challenge(s)
+ + Requesting certificate...
+ + Checking certificate...
+ + Done!
+ + Creating fullchain.pem...
+ err: awk: fatal: cannot open file `/etc/resty-auto-ssl/letsencrypt/certs/www.mlopes.xyz/cert-1737277391.pem' for reading: No such file or directory
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:03:17 [error] 4295#4295: *1262 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:03:17 [error] 4295#4295: *1262 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for www.mlopes.xyz - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:04:24 [error] 4295#4295: *1285 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 09:04:24 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDkOcVz154_VIY2o4P87Uschepf2X25if-ieVyEDPzqOA
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:04:24 [error] 4295#4295: *1285 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:04:24 [error] 4295#4295: *1285 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:04:30 [error] 4295#4295: *1298 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 09:04:30 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuulGIecXpWrhDRfQWlpJUOdWe4OQS1LWe6SACt-5O5lXg
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:04:30 [error] 4295#4295: *1298 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:04:30 [error] 4295#4295: *1298 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:12:09 [error] 4295#4295: *1434 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 09:12:09 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDtAymiOm6ysd0ICoPX-wThWMHIBOG8KkhEbVURU2dmzc
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:12:09 [error] 4295#4295: *1434 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:12:09 [error] 4295#4295: *1434 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:12:15 [error] 4295#4295: *1451 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 09:12:15 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1CcgfsZdSKRtfr_Lt6j4SMGDrVykAVW5WdF1rp5PDUh8
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:12:15 [error] 4295#4295: *1451 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 06:12:15 [error] 4295#4295: *1451 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:41 [error] 4295#4295: *2257 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 10:51:41 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuulONe2aC25uTtxbbml4rplfmSXBTXiniyfYeR5Dt7mPg
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:41 [error] 4295#4295: *2257 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:41 [error] 4295#4295: *2257 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:48 [error] 4295#4295: *2260 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 10:51:48 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3Ouujx7f9K9qxqeLhFS9WWJbJI4d4JWbnxuSr7SJ1-vLLDw
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:48 [error] 4295#4295: *2260 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:48 [error] 4295#4295: *2260 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:55 [error] 4295#4295: *2267 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 10:51:55 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDLTJxe6sjxAP0XINlbjG7_m_pprLpIrWMlLsoLXXj_8w
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:55 [error] 4295#4295: *2267 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:51:55 [error] 4295#4295: *2267 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:01 [error] 4295#4295: *2272 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 10:52:00 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZpfE8hXXyM3Fs-VgTFIvGSSSMRkruvicTWDGcJVSRYEI
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:01 [error] 4295#4295: *2272 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:01 [error] 4295#4295: *2272 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:09 [error] 4295#4295: *2262 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 10:52:09 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3Ouumc46kyjznNhUWBR-cn9SFkbrpzEiQJM6BQe1T-U95kc
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:09 [error] 4295#4295: *2262 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:09 [error] 4295#4295: *2262 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:13 [error] 4295#4295: *2265 [lua] ssl_certificate.lua:68: issue_cert(): auto-ssl: failed to obtain lock: timeout, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:13 [error] 4295#4295: *2265 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:17 [error] 4295#4295: *2275 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 10:52:17 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuuHqk1QLfk4E4lfa9ZZlN-0Py4WLfC04YIIAQPQspBbu8
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:17 [error] 4295#4295: *2275 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:17 [error] 4295#4295: *2275 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:25 [error] 4295#4295: *2270 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 10:52:24 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDS1E_aPJysOj-WDR3xiTOooPiXf5JcBx4U_flQpAj69M
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:25 [error] 4295#4295: *2270 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 07:52:25 [error] 4295#4295: *2270 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:00 [error] 4295#4295: *2372 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:00 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS164ZEaDUXlRIAGScDaF2UzYgqraUGfgZzEhZxOtL3qFU
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:00 [error] 4295#4295: *2372 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:00 [error] 4295#4295: *2372 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:06 [error] 4295#4295: *2375 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:06 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZMplH5s6TbqwiLAyGFP93toRjPULrCCD5WmJF1qDMLWE
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:06 [error] 4295#4295: *2375 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:06 [error] 4295#4295: *2375 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:10 [error] 4295#4295: *2379 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:10 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1haRc9ZitGvxFIl8yZG4BXaL-8fQ2CW0SxWO3mqPNeGM
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:10 [error] 4295#4295: *2379 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:10 [error] 4295#4295: *2379 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:17 [error] 4295#4295: *2382 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:17 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDCx0iz6PIzDtO6YR5wdkF0VgSwB_8sjBhly9AQL5pmhU
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:17 [error] 4295#4295: *2382 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:17 [error] 4295#4295: *2382 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:28 [error] 4295#4295: *2385 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:27 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZCmHLwm-FJcYO8zGbPxV5AQj03w2zrHEdwjdFOfw1dhg
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:28 [error] 4295#4295: *2385 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:28 [error] 4295#4295: *2385 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:34 [error] 4295#4295: *2388 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:34 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDq6i5B9q2uZxXQU2ynpsRYdZuR0pCq0C0CVBzJCFzK9g
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:34 [error] 4295#4295: *2388 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:34 [error] 4295#4295: *2388 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:39 [error] 4295#4295: *2395 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:39 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDPXBhbRfF2wmf8KYX2TlYJwlj_qemNpXP7_SiwQPCrSc
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:39 [error] 4295#4295: *2395 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:39 [error] 4295#4295: *2395 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:44 [error] 4295#4295: *2391 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:43 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZXmZiZWkVARUkNNnypToAe1xRgHPcIMU10Ku6HOZtNmY
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:44 [error] 4295#4295: *2391 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:44 [error] 4295#4295: *2391 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:45 [error] 4295#4295: *2402 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 34.77.189.226 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 34.77.189.226
+ + Creating new directory /etc/resty-auto-ssl/letsencrypt/certs/34.77.189.226 ...
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:40:45 GMT
+content-type: application/problem+json
+content-length: 224
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuubCAqwAHOw6NZwJagmCWk-DBgmfQlm_HHNgSEePiINlk
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"34.77.189.226\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:45 [error] 4295#4295: *2402 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:40:45 [error] 4295#4295: *2402 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 34.77.189.226 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:48:12 [error] 4295#4295: *2447 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:48:12 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuutnOXe6UgQ1Y_ucbHRmZz06eDLvSIaxb2Mr8V0m_7k1o
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:48:12 [error] 4295#4295: *2447 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:48:12 [error] 4295#4295: *2447 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:48:18 [error] 4295#4295: *2460 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 11:48:17 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS12s_x-gjgpmSjKK7GwzHzv_lBuNzBMV6eGfJV7K901Zs
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:48:18 [error] 4295#4295: *2460 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 08:48:18 [error] 4295#4295: *2460 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:05:38 [error] 4295#4295: *2576 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:05:38 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDSzU5Q2lk659rdYvW3s53bVf2bUhrHhGPinhInEaq8OU
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:05:38 [error] 4295#4295: *2576 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:05:38 [error] 4295#4295: *2576 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:04 [error] 4295#4295: *2571 [lua] ssl_certificate.lua:53: issue_cert_unlock(): auto-ssl: failed to unlock: lock does not match expected value, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:05 [error] 4295#4295: *2581 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain hacasdsad.mlopes.xyz --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing hacasdsad.mlopes.xyz
+ + Signing domains...
+ + Generating private key...
+ err: /usr/local/bin/resty-auto-ssl/dehydrated: line 991: /etc/resty-auto-ssl/letsencrypt/certs/hacasdsad.mlopes.xyz/privkey-1737288362.pem: No such file or directory
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:05 [error] 4295#4295: *2581 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:05 [error] 4295#4295: *2581 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for hacasdsad.mlopes.xyz - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:16 [error] 4295#4295: *2595 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:06:15 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1tsaRO91qezHqNazo3Umo0P_1xc24Tum66q5Ox8hQsNI
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:16 [error] 4295#4295: *2595 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:16 [error] 4295#4295: *2595 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:55 [error] 4295#4295: *2611 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:06:54 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuuVE_gCT8km82JAx7Z889JX7PPJshL3Tr-gphQn-K31_0
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:55 [error] 4295#4295: *2611 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:55 [error] 4295#4295: *2611 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:58 [error] 4295#4295: *2619 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:06:58 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS18pdEUWX5ZMCvZ1okar_YGflke-jbwkcZC3g-Of5UypA
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:58 [error] 4295#4295: *2619 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:06:58 [error] 4295#4295: *2619 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:07:15 [error] 4295#4295: *2639 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:07:15 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZZ9_YjK4I8FlIYIyVHldjm3hNa97SOgh_CTeseyfFb4c
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:07:15 [error] 4295#4295: *2639 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:07:15 [error] 4295#4295: *2639 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:07:33 [error] 4295#4295: *2688 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:07:32 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZbcN6Gls1ncrDH5xS5fDYoa3BYjHpJLV5PnxroHlTbmo
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:07:33 [error] 4295#4295: *2688 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:07:33 [error] 4295#4295: *2688 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:08:11 [error] 4295#4295: *2712 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:08:10 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1hZUG7X88a9rmN0AffZr7e9XWBxnVGhnu-G8vivniSyI
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:08:11 [error] 4295#4295: *2712 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:08:11 [error] 4295#4295: *2712 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:08:51 [error] 4295#4295: *2724 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:08:50 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1CyAZ_luBqRowqhRfV5_obgYmnXbemFiI8s-NStXkt6Q
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:08:51 [error] 4295#4295: *2724 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:08:51 [error] 4295#4295: *2724 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:09:30 [error] 4295#4295: *2728 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:09:29 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1p_yI-5JSnaBOT-Tr7JL3lQFGFeau23YVca-9c9p3JAg
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:09:30 [error] 4295#4295: *2728 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:09:30 [error] 4295#4295: *2728 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:10:10 [error] 4295#4295: *2736 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:10:09 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuubMhcC4wkRc5mnSYHYtas8TzzwyFYvQqbRSldBbd1geg
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:10:10 [error] 4295#4295: *2736 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:10:10 [error] 4295#4295: *2736 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:58:39 [error] 4295#4295: *2872 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:58:39 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8Z2RDm_czyIJ6vHS0nUiEoQneD-_yPpzKohklCIgDdL3c
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:58:39 [error] 4295#4295: *2872 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:58:39 [error] 4295#4295: *2872 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:58:45 [error] 4295#4295: *2881 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 12:58:45 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1FDWD5rWhoraAWE97rzCV5AijFljYLej-Du0I4Zjhsgs
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:58:45 [error] 4295#4295: *2881 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 09:58:45 [error] 4295#4295: *2881 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:12:58 [error] 4295#4295: *2993 [lua] ssl_certificate.lua:53: issue_cert_unlock(): auto-ssl: failed to unlock: lock does not match expected value, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:00 [error] 4295#4295: *3000 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain www.teste1.mlopes.xyz --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing www.teste1.mlopes.xyz
+ + Signing domains...
+ + Generating private key...
+ err: /usr/local/bin/resty-auto-ssl/dehydrated: line 991: /etc/resty-auto-ssl/letsencrypt/certs/www.teste1.mlopes.xyz/privkey-1737292377.pem: No such file or directory
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:00 [error] 4295#4295: *3000 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:00 [error] 4295#4295: *3000 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for www.teste1.mlopes.xyz - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:14 [error] 4295#4295: *3016 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:13:14 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuukMTisfN23t_Z3aoIrPxbX4_X7afO7NBVoJt2FJ3QdMA
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:14 [error] 4295#4295: *3016 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:14 [error] 4295#4295: *3016 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:18 [error] 4295#4295: *3032 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:13:18 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDhjOotkJQ3vaZRA9wmNiXl81ykPHyltv-wQh7YqOqQXg
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:18 [error] 4295#4295: *3032 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:13:18 [error] 4295#4295: *3032 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:36:44 [error] 4295#4295: *3328 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:36:44 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuurITn0RrNSN6MQo_ID9wOg1XSz4PqRf0_4YjEra3LObo
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:36:44 [error] 4295#4295: *3328 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:36:44 [error] 4295#4295: *3328 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:36:51 [error] 4295#4295: *3348 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:36:51 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8ZuIrH0862qVED1GxvOAIxSWYO_fAwh7h636zbgUb5uko
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:36:51 [error] 4295#4295: *3348 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:36:51 [error] 4295#4295: *3348 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:16 [error] 4295#4295: *3482 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:54:15 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuuXYQwPt9nf5H5ABpoPhBGv4POmTY5CWwavjMwuz3K7Dc
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:16 [error] 4295#4295: *3482 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:16 [error] 4295#4295: *3482 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:21 [error] 4295#4295: *3485 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:54:21 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1SmK1pi6rJKRn2GtPP-AK5856L_IDenjlFqUBnYdUdbw
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:21 [error] 4295#4295: *3485 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:21 [error] 4295#4295: *3485 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:27 [error] 4295#4295: *3491 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:54:27 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDZOIvbc3S8NJRjxMB-wSP0uYonwnNe4rnD0WlwJ2l5Qg
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:27 [error] 4295#4295: *3491 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:27 [error] 4295#4295: *3491 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:34 [error] 4295#4295: *3494 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:54:34 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: vH9x4oS1PlyTNNHpdaW94zE7uDC4eN4yUnwBFuNcGl9c04o0fFc
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:34 [error] 4295#4295: *3494 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:34 [error] 4295#4295: *3494 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:39 [error] 4295#4295: *3497 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:54:39 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDkCmJGuBdpTszIxjeN1RgpkDa6x1rN-9K9zGCgsK7oqY
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:39 [error] 4295#4295: *3497 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:39 [error] 4295#4295: *3497 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:46 [error] 4295#4295: *3500 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:54:45 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8Zo0PdPTOkvTZVLICyF88DCxCBBrt1Ow9LfalkrOIpI1w
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:46 [error] 4295#4295: *3500 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:46 [error] 4295#4295: *3500 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:50 [error] 4295#4295: *3504 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:54:49 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDJDmyfz7Tt_iKIgaQ9iggiDZPAtbuXVcxk-PMh2yZ65U
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:50 [error] 4295#4295: *3504 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:50 [error] 4295#4295: *3504 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:56 [error] 4295#4295: *3508 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 13:54:55 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuufcvlFsLaG3irhiSwMYvLP0eOdb1HOOVMxNssRSQgqqs
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:56 [error] 4295#4295: *3508 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 10:54:56 [error] 4295#4295: *3508 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:12 [error] 4295#4295: *3848 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 15:07:11 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3OuuKX2A9FVKqMxH4Aefn86Yfv5S6XEr_-9_P3qjMkPWFSc
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:12 [error] 4295#4295: *3848 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:12 [error] 4295#4295: *3848 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:21 [error] 4295#4295: *3871 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 15:07:20 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDkKDGIXHbLXjB_nmjIbtceWs0gRxftw41bnTOvZ6u708
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:21 [error] 4295#4295: *3871 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:21 [error] 4295#4295: *3871 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:53 [error] 4295#4295: *3924 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 15:07:53 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDtWiqhz5npPF0-u8a0wWG82keP4jO1FADF7USKdhBPdQ
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:53 [error] 4295#4295: *3924 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:53 [error] 4295#4295: *3924 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:58 [error] 4295#4295: *3944 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 15:07:58 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: Ynw3DK8Z9D-Qfcuy7oPAbjUYn5y0SlCjVie-b0qhg8awzUBVYzo
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:58 [error] 4295#4295: *3944 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:07:58 [error] 4295#4295: *3944 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:10:58 [error] 4295#4295: *4086 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 15:10:58 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: 695xoWTDOd72uJQXUSvo12000ACJ0Lzmi9aSf1bzUrY_Fl9GkwU
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:10:58 [error] 4295#4295: *4086 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:10:58 [error] 4295#4295: *4086 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:11:03 [error] 4295#4295: *4106 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=ed719da91c31a4a45bcaec5594d644fdbd031136114413ac1131585eaeb2b163 HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain 179.232.255.135 --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing 179.232.255.135
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 400)
+
+Details:
+HTTP/2 400 
+server: nginx
+date: Sun, 19 Jan 2025 15:11:03 GMT
+content-type: application/problem+json
+content-length: 226
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+replay-nonce: TuPv3Ouu-ltFKOt4_BrNKgcY86StvgHpZF9BSJphSidrP4ZDJ_o
+
+{
+  "type": "urn:ietf:params:acme:error:rejectedIdentifier",
+  "detail": "Invalid identifiers requested :: Cannot issue for \"179.232.255.135\": The ACME server can not issue a certificate for an IP address",
+  "status": 400
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:11:03 [error] 4295#4295: *4106 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 12:11:03 [error] 4295#4295: *4106 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for 179.232.255.135 - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:14 [error] 256#256: *35 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=8f009a845cec96899eabbb29766da809bb9a6f21b77d1b89a1c41291adc8123f HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain b3e8ff87.virtua.com.br --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing b3e8ff87.virtua.com.br
+ + Creating new directory /etc/resty-auto-ssl/letsencrypt/certs/b3e8ff87.virtua.com.br ...
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ + Received 1 authorizations URLs from the CA
+ + Handling authorization for b3e8ff87.virtua.com.br
+ + 1 pending challenge(s)
+ + Deploying challenge tokens...
+deploy_challenge
+ + Responding to challenge for b3e8ff87.virtua.com.br authorization...
+invalid_challenge
+Invalid challenge: DOMAIN=b3e8ff87.virtua.com.br RESPONSE={
+  "type": "http-01",
+  "url": "https://acme-v02.api.letsencrypt.org/acme/chall/2176686025/463119549995/1G4rKg",
+  "status": "invalid",
+  "validated": "2025-01-19T18:28:11Z",
+  "error": {
+    "type": "urn:ietf:params:acme:error:dns",
+    "detail": "DNS problem: NXDOMAIN looking up A for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain",
+    "status": 400
+  },
+  "token": "k8TvWzoSd26irrAmJfvVmnOZKO210hYpKtIrDUN9aJo"
+}
+ err: nil, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:14 [error] 256#256: *35 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:14 [error] 256#256: *35 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for b3e8ff87.virtua.com.br - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:23 [error] 256#256: *41 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=8f009a845cec96899eabbb29766da809bb9a6f21b77d1b89a1c41291adc8123f HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain b3e8ff87.virtua.com.br --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing b3e8ff87.virtua.com.br
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ + Received 1 authorizations URLs from the CA
+ + Handling authorization for b3e8ff87.virtua.com.br
+ + 1 pending challenge(s)
+ + Deploying challenge tokens...
+deploy_challenge
+ + Responding to challenge for b3e8ff87.virtua.com.br authorization...
+invalid_challenge
+Invalid challenge: DOMAIN=b3e8ff87.virtua.com.br RESPONSE={
+  "type": "http-01",
+  "url": "https://acme-v02.api.letsencrypt.org/acme/chall/2176686025/463119605365/9EsWZA",
+  "status": "invalid",
+  "validated": "2025-01-19T18:28:21Z",
+  "error": {
+    "type": "urn:ietf:params:acme:error:dns",
+    "detail": "DNS problem: NXDOMAIN looking up A for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain",
+    "status": 400
+  },
+  "token": "jXP47_wWSh_IaVkGcOmy5k_uYbdJpsqt2Y23LU-bu_k"
+}
+ err: nil, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:23 [error] 256#256: *41 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:23 [error] 256#256: *41 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for b3e8ff87.virtua.com.br - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:36 [error] 256#256: *52 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=8f009a845cec96899eabbb29766da809bb9a6f21b77d1b89a1c41291adc8123f HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain b3e8ff87.virtua.com.br --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing b3e8ff87.virtua.com.br
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ + Received 1 authorizations URLs from the CA
+ + Handling authorization for b3e8ff87.virtua.com.br
+ + 1 pending challenge(s)
+ + Deploying challenge tokens...
+deploy_challenge
+ + Responding to challenge for b3e8ff87.virtua.com.br authorization...
+invalid_challenge
+Invalid challenge: DOMAIN=b3e8ff87.virtua.com.br RESPONSE={
+  "type": "http-01",
+  "url": "https://acme-v02.api.letsencrypt.org/acme/chall/2176686025/463119662685/fXu4_g",
+  "status": "invalid",
+  "validated": "2025-01-19T18:28:33Z",
+  "error": {
+    "type": "urn:ietf:params:acme:error:dns",
+    "detail": "DNS problem: NXDOMAIN looking up A for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain",
+    "status": 400
+  },
+  "token": "iYia2euV-5Fwn11BF384oy0rpM40eg_qA9J-c-CWtcQ"
+}
+ err: nil, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:36 [error] 256#256: *52 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:36 [error] 256#256: *52 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for b3e8ff87.virtua.com.br - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:45 [error] 256#256: *60 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=8f009a845cec96899eabbb29766da809bb9a6f21b77d1b89a1c41291adc8123f HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain b3e8ff87.virtua.com.br --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing b3e8ff87.virtua.com.br
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ + Received 1 authorizations URLs from the CA
+ + Handling authorization for b3e8ff87.virtua.com.br
+ + 1 pending challenge(s)
+ + Deploying challenge tokens...
+deploy_challenge
+ + Responding to challenge for b3e8ff87.virtua.com.br authorization...
+invalid_challenge
+Invalid challenge: DOMAIN=b3e8ff87.virtua.com.br RESPONSE={
+  "type": "http-01",
+  "url": "https://acme-v02.api.letsencrypt.org/acme/chall/2176686025/463119705525/h5Qzsg",
+  "status": "invalid",
+  "validated": "2025-01-19T18:28:42Z",
+  "error": {
+    "type": "urn:ietf:params:acme:error:dns",
+    "detail": "DNS problem: NXDOMAIN looking up A for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain",
+    "status": 400
+  },
+  "token": "4tRCtz0XjCc8Dw_PfqzzkGRC4HWpcuy8fsotSusKZ4s"
+}
+ err: nil, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:45 [error] 256#256: *60 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:45 [error] 256#256: *60 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for b3e8ff87.virtua.com.br - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:59 [error] 256#256: *73 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=8f009a845cec96899eabbb29766da809bb9a6f21b77d1b89a1c41291adc8123f HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain b3e8ff87.virtua.com.br --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing b3e8ff87.virtua.com.br
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ + Received 1 authorizations URLs from the CA
+ + Handling authorization for b3e8ff87.virtua.com.br
+ + 1 pending challenge(s)
+ + Deploying challenge tokens...
+deploy_challenge
+ + Responding to challenge for b3e8ff87.virtua.com.br authorization...
+invalid_challenge
+Invalid challenge: DOMAIN=b3e8ff87.virtua.com.br RESPONSE={
+  "type": "http-01",
+  "url": "https://acme-v02.api.letsencrypt.org/acme/chall/2176686025/463119770705/gRF2KQ",
+  "status": "invalid",
+  "validated": "2025-01-19T18:28:56Z",
+  "error": {
+    "type": "urn:ietf:params:acme:error:dns",
+    "detail": "DNS problem: NXDOMAIN looking up A for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain; DNS problem: NXDOMAIN looking up AAAA for b3e8ff87.virtua.com.br - check that a DNS record exists for this domain",
+    "status": 400
+  },
+  "token": "BVOleHENdI5mbc6fF1ybPhqlOtRXqsEW6K_cUoCYTgY"
+}
+ err: nil, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:59 [error] 256#256: *73 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:28:59 [error] 256#256: *73 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for b3e8ff87.virtua.com.br - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:06 [error] 256#256: *78 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=8f009a845cec96899eabbb29766da809bb9a6f21b77d1b89a1c41291adc8123f HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain b3e8ff87.virtua.com.br --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing b3e8ff87.virtua.com.br
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 429)
+
+Details:
+HTTP/2 429 
+server: nginx
+date: Sun, 19 Jan 2025 18:29:06 GMT
+content-type: application/problem+json
+content-length: 303
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+link: <https://letsencrypt.org/docs/rate-limits>;rel="help"
+replay-nonce: vH9x4oS1BxbTJxrjVeQE_1baCu72fcJ98qeSgSVP0FjFSThDDNM
+retry-after: 685
+
+{
+  "type": "urn:ietf:params:acme:error:rateLimited",
+  "detail": "too many failed authorizations (5) for \"b3e8ff87.virtua.com.br\" in the last 1h0m0s, retry after 2025-01-19 18:40:31 UTC: see https://letsencrypt.org/docs/rate-limits/#authorization-failures-per-hostname-per-account",
+  "status": 429
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:06 [error] 256#256: *78 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:06 [error] 256#256: *78 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for b3e8ff87.virtua.com.br - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:16 [error] 256#256: *85 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=8f009a845cec96899eabbb29766da809bb9a6f21b77d1b89a1c41291adc8123f HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain b3e8ff87.virtua.com.br --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing b3e8ff87.virtua.com.br
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 429)
+
+Details:
+HTTP/2 429 
+server: nginx
+date: Sun, 19 Jan 2025 18:29:15 GMT
+content-type: application/problem+json
+content-length: 303
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+link: <https://letsencrypt.org/docs/rate-limits>;rel="help"
+replay-nonce: 695xoWTD2fSBcpQMSHM4w2Q4sUMJnWEN2_azuT06pqpEXto18Ho
+retry-after: 661
+
+{
+  "type": "urn:ietf:params:acme:error:rateLimited",
+  "detail": "too many failed authorizations (5) for \"b3e8ff87.virtua.com.br\" in the last 1h0m0s, retry after 2025-01-19 18:40:16 UTC: see https://letsencrypt.org/docs/rate-limits/#authorization-failures-per-hostname-per-account",
+  "status": 429
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:16 [error] 256#256: *85 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:16 [error] 256#256: *85 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for b3e8ff87.virtua.com.br - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:37 [error] 256#256: *89 [lua] lets_encrypt.lua:40: issue_cert(): auto-ssl: dehydrated failed: env HOOK_SECRET=8f009a845cec96899eabbb29766da809bb9a6f21b77d1b89a1c41291adc8123f HOOK_SERVER_PORT=8999 /usr/local/bin/resty-auto-ssl/dehydrated --cron --accept-terms --no-lock --domain b3e8ff87.virtua.com.br --challenge http-01 --config /etc/resty-auto-ssl/letsencrypt/config --hook /usr/local/bin/resty-auto-ssl/letsencrypt_hooks status: 256 out: # INFO: Using main config file /etc/resty-auto-ssl/letsencrypt/config
+startup_hook
+Processing b3e8ff87.virtua.com.br
+ + Signing domains...
+ + Generating private key...
+ + Generating signing request...
+ + Requesting new certificate order from CA...
+ err:   + ERROR: An error occurred while sending post-request to https://acme-v02.api.letsencrypt.org/acme/new-order (Status 429)
+
+Details:
+HTTP/2 429 
+server: nginx
+date: Sun, 19 Jan 2025 18:29:37 GMT
+content-type: application/problem+json
+content-length: 303
+boulder-requester: 2176686025
+cache-control: public, max-age=0, no-cache
+link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+link: <https://letsencrypt.org/docs/rate-limits>;rel="help"
+replay-nonce: 695xoWTDBAHJ4St2Xky48kAeM1Vf68uB7VFUPxs6An7YeV05-eE
+retry-after: 641
+
+{
+  "type": "urn:ietf:params:acme:error:rateLimited",
+  "detail": "too many failed authorizations (5) for \"b3e8ff87.virtua.com.br\" in the last 1h0m0s, retry after 2025-01-19 18:40:18 UTC: see https://letsencrypt.org/docs/rate-limits/#authorization-failures-per-hostname-per-account",
+  "status": 429
+}
+
+, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:37 [error] 256#256: *89 [lua] ssl_certificate.lua:97: issue_cert(): auto-ssl: issuing new certificate failed: dehydrated failure, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
+2025/01/19 15:29:37 [error] 256#256: *89 [lua] ssl_certificate.lua:291: auto-ssl: could not get certificate for b3e8ff87.virtua.com.br - using fallback - failed to get or issue certificate, context: ssl_certificate_by_lua*, client: 172.27.80.1, server: 0.0.0.0:443
