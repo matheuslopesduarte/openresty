@@ -1,3 +1,6 @@
 [submodule "servers/laravel.mlopes.xyz/project"]
 	path = servers/laravel.mlopes.xyz/project
 	url = https://github.com/matheuslopesduarte/laravel-teste.git
+[submodule "servers/auth.mlopes.xyz/project"]
+	path = servers/auth.mlopes.xyz/project
+	url = https://github.com/matheuslopesduarte/laravel-auth-sso.git
