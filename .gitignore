@@ -1,2 +1,3 @@
 /nginx/logs/nginx.pid
 /nginx/logs/error.log
+/servers/*/project3/
