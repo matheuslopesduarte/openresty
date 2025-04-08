@@ -1,3 +1,9 @@
 /nginx/logs/nginx.pid
 /nginx/logs/error.log
-/servers/*/project3/
+
+# PARTE IMPORTANTE!!!!!
+/prod-servers/ 
+/dev-servers/
+# /prod-servers/ -> sites de projetos completos
+# /dev-servers/ -> sites de projetos em desenvolvimento
+# /servers/ -> sites misc  
