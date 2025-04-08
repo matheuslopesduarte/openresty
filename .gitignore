@@ -6,4 +6,4 @@
 /dev-servers/
 # /prod-servers/ -> sites de projetos completos
 # /dev-servers/ -> sites de projetos em desenvolvimento
-# /servers/ -> sites misc  
+# /servers/ -> sites misc e testes
