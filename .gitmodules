@@ -4,3 +4,6 @@
 [submodule "servers/auth.mlopes.xyz/project"]
 	path = servers/auth.mlopes.xyz/project
 	url = https://github.com/matheuslopesduarte/laravel-auth-sso.git
+[submodule "servers/next-class.mlopes.xyz/project"]
+	path = servers/next-class.mlopes.xyz/project
+	url = https://github.com/TCC-Next-Class/NextClass-BackEnd.git
